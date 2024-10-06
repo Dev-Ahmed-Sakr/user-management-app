@@ -1,0 +1,40 @@
+<div class="user-management-container">
+  <button  class="logout-btn" (click)="logout()">Logout</button> <!-- Logout button -->
+  <h2>User Management</h2>
+
+  <button *ngIf="isAdmin()" (click)="navigateToAddUser()">Add User</button> <!-- Button to navigate to add user screen in case of admin users inly-->
+
+  <div class="user-grid">
+    <div class="table-responsive">
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>ZIP Code</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.firstName }}</td>
+            <td >{{ user.lastName }}</td>
+            <td >{{ user.email }}</td>
+            <td >{{ user.phoneNumber }}</td>
+            <td >{{ user.zipCode }}</td>
+            <td >{{ user.address }}</td>
+            <td class="action-buttons" data-label="Actions">
+              <button *ngIf="isAdmin() || isModerator()" (click)="editUser(user.id)">Edit</button>
+              <button *ngIf="isAdmin()" (click)="deleteUser(user.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    
+  </div>
+</div>

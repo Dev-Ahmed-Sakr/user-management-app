@@ -1,0 +1,72 @@
+/* Styles for Add User Component */
+
+.add-user-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-user-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #495057;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  
+  

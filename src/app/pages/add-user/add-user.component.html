@@ -1,0 +1,49 @@
+
+<div class="add-user-container">
+    <h2>Add User</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName" required />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" required />
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" formControlName="phoneNumber" required pattern="^\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$"/>
+        <div *ngIf="userForm.controls['phoneNumber'].invalid && userForm.controls['phoneNumber'].touched" class="error-message">
+          Invalid Phone number format. Must follow the USA phone number format (e.g., (123) 456-7890)..
+        </div>
+      </div>     
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" formControlName="address" />
+      </div>
+      <div class="form-group">
+        <label for="zipCode">ZIP Code:</label>
+        <input type="text" id="zipCode" formControlName="zipCode" required pattern="^\d{5}(-\d{4})?$" />
+        <div *ngIf="userForm.controls['zipCode'].invalid && userForm.controls['zipCode'].touched" class="error-message">
+          Invalid ZIP code format. It should be 5 digits or ZIP+4.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" required />
+      </div>
+      <div class="form-group">
+        <label for="userTypeId">User Type:</label>
+        <select id="userTypeId" formControlName="userTypeId">
+          <option value="1">Admin</option>
+          <option value="2">Moderator</option>
+        </select>
+      </div>
+      <button type="submit">Add User</button>
+    </form>
+  </div>
+  

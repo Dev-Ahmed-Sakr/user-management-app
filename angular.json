@@ -11,6 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
+          
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/user-management-app",
@@ -62,6 +63,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+        },
           "configurations": {
             "production": {
               "buildTarget": "user-management-app:build:production"
@@ -97,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "395d7868-265d-49a4-96f0-b9c5b021d173"
   }
 }
