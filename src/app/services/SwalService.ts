@@ -36,20 +36,20 @@ export class SwalService {
 
   alertDelete(callback: Function, title?: string, text?: string, confirmText?: string, cancelText?: string, afterApproveTitle?: string, afterApproveText?: string) {
     Swal.fire({
-      title: 'swal.Are you sure?',
-      text: "swal.You won't be able to revert this!",
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText:  'swal.Yes, delete it!',
-      cancelButtonText: 'swal.Cancel'
+      confirmButtonText:  'Yes, delete it!',
+      cancelButtonText: 'Cancel'
     }).then((result: any) => {
       if (result.isConfirmed) {
         callback();
         Swal.fire(
-          'swal.Deleted!',
-          'swal.Record has been deleted',
+          'Deleted!',
+          'Record has been deleted',
           'success'
         )
       }

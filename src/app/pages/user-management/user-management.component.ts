@@ -65,8 +65,10 @@ navigateToAddUser() {
     deleteUser(id: number) {
       // Check if the user is an Admin
       if (this.authService.isAdmin()) {
-        this.userService.deleteUser(id).subscribe(() => {
-          this.loadUsers();
+        this.swalService.alertDelete(()=>{
+          this.userService.deleteUser(id).subscribe(() => {
+            this.loadUsers();
+          });
         });
       } else {
         this.swalService.alertWithError('Only admins can delete users.');
