@@ -58,20 +58,20 @@ export class SwalService {
 
   alertApproval(callback: Function, title?: string, text?: string, confirmText?: string, cancelText?: string, afterApproveTitle?: string, afterApproveText?: string) {
     Swal.fire({
-      title: 'swal.Are you sure?',
-      text: "swal.You won't be able to revert this!",
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'swal.Yes, approve it!',
-      cancelButtonText: 'swal.Cancel'
+      confirmButtonText: 'Yes, approve it!',
+      cancelButtonText: 'Cancel'
     }).then((result: any) => {
       if (result.isConfirmed) {
         callback();
         Swal.fire(
-          'swal.Approved!',
-          'swal.Record has been approved',
+          'Approved!',
+          'Record has been approved',
           'success'
         )
       }
